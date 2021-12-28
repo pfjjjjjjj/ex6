@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中秋节吃月饼</title>
+	<style type="text/css">
+	  html,body{
+	    width:100%;
+	  	height:100%;
+	  	margin:0px;      	
+	  	overflow:hidden;
+	  }
+	  p{
+	  	text-align: center;
+	  	margin:0;
+	  }
+	  </style>
+</head>
+<body>
+    <script src="js/pixi.min.js"></script>
+    <script>
+		var app = new PIXI.Application(1000,600);
+        document.body.appendChild(app.view);
+        
+        var bg = new PIXI.Sprite.fromImage("res/zhongqiu.jpg");
+		bg.width=1000;
+		bg.height=600;
+        app.stage.addChild(bg);
+
+		
+		var dw = new PIXI.Text("点击喂小兔吃月饼捏");
+		app.stage.addChild(dw);
+		dw.x=400;
+		dw.y=50;
+		dw.style.fill=0xffffff;
+		
+		var chunjie = new PIXI.Sprite.fromImage("res/yuebin.jpg");
+		chunjie.width=100;
+		chunjie.height=100;
+		app.stage.addChild(chunjie);
+		chunjie.x=100;
+		chunjie.y=200;
+		
+		var duanwu = new PIXI.Sprite.fromImage("res/tu.jpg");
+		duanwu.width=120;
+		duanwu.height=180;
+		app.stage.addChild(duanwu);
+		duanwu.x=800;
+		duanwu.y=400;
+		
+		var chunjie1 = new PIXI.Sprite.fromImage("res/yuebin.jpg");
+		chunjie1.width=100;
+		chunjie1.height=100;
+		app.stage.addChild(chunjie1);
+		chunjie1.visible=false;
+		
+		chunjie.interactive=true;
+		chunjie.on("click",dww);
+		duanwu.interactive=true;
+		duanwu.on("mouseover",cjj);
+		
+		bg.interactive = true;
+		bg.on("mousemove", movePlane);
+		function movePlane(event) {
+		    var pos = event.data.getLocalPosition(app.stage);
+		    chunjie1.x = pos.x;
+		    chunjie1.y = pos.y;
+		}
+		
+		function dww(){
+			chunjie1.visible=true;
+		}
+		
+		function cjj(){
+            chunjie1.visible=false;
+		}
+		
+    </script>
+	<p><a href="index.html">返回首页</a></p>
+</body>
+</html>

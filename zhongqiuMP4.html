@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>中秋视频</title>
+    <meta charset="utf-8" />
+    <style>
+    	 p{
+      	text-align: center;
+      	margin-top:50px;
+      }
+      #main{
+      	width:700px;
+      	margin:auto;
+      }
+    </style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+      function hello1(){
+    	  $("video").trigger("play");
+      }
+      function hello2(){
+    	  $("video").trigger("pause");
+      }
+      function hello3(){
+    	  $("video").prop("currentTime",78);
+      }
+      function hello4(){
+    	  var muted = $("video").prop("muted");
+    	  $("video").prop("muted",!muted);
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+    <input type="button" value="播放" onclick="hello1()" />
+    <input type="button" value="暂停" onclick="hello2()" />
+    <input type="button" value="设置进度" onclick="hello3()" />
+    <input type="button" value="静音" onclick="hello4()" />
+    </p>  
+    <div id="main">
+    	<video id="vo" width="700" controls src="res/zhongqiu.MP4"></video>
+    </div>    
+     <p><a href="zhongqiu1.html">返回</a></p>
+  </body>
+</html>
+
+
